@@ -14,9 +14,12 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import { color } from "@mui/system";
+import { useLoaderData } from "react-router-dom";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const data = useLoaderData();
+  console.log(data);
   return (
     <Box m="20px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
