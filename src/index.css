@@ -34,3 +34,6 @@ body,
   background: #555;
 }
 
+.icon-button-no-hover:hover {
+  background-color: inherit !important;
+}

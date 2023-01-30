@@ -7,6 +7,7 @@ import {
   useTheme,
   useMediaQuery,
   Divider,
+  IconButton,
 } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import { BsTwitch } from "react-icons/bs";
@@ -138,9 +139,11 @@ const Login = () => {
                   />
                 </Box>
                 <Box display="flex" justifyContent="right">
-                  <Typography sx={{ color: colors.blueAccent[400] }}>
-                    Forgot password?
-                  </Typography>
+                  <IconButton className="icon-button-no-hover">
+                    <Typography sx={{ color: colors.blueAccent[400] }}>
+                      Forgot password?
+                    </Typography>
+                  </IconButton>
                 </Box>
                 <Box
                   display="flex"
@@ -158,12 +161,25 @@ const Login = () => {
                   </Button>
                 </Box>
                 <Box display="flex" justifyContent="center" p="10px">
-                  <Typography>Not a user?</Typography>
                   <Typography
-                    sx={{ margin: "0 20px", color: colors.blueAccent[400] }}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
                   >
-                    Request access
+                    Not a user?
                   </Typography>
+                  <IconButton className="icon-button-no-hover">
+                    <Typography
+                      sx={{ margin: "0 20px", color: colors.blueAccent[400] }}
+                      onClick={() => {
+                        console.log("Not a user");
+                      }}
+                    >
+                      Request access
+                    </Typography>
+                  </IconButton>
                 </Box>
               </form>
             )}
