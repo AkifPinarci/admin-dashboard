@@ -16,7 +16,9 @@ import Geography from "./scenes/geography";
 import Team from "./scenes/team";
 import Calendar from "./scenes/calendar";
 import LoginPage from "./scenes/login";
-
+import Login from "./scenes/login/Login";
+import ForgetPassword from "./scenes/login/ForgetPassword";
+import SignUp from "./scenes/login/SignUp";
 function App() {
   const HeaderLayout = () => (
     <div className="app">
@@ -32,6 +34,20 @@ function App() {
     {
       path: "/login",
       element: <LoginPage />,
+      children: [
+        {
+          index: true,
+          element: <Login />,
+        },
+        {
+          path: "/login/forget-password",
+          element: <ForgetPassword />,
+        },
+        {
+          path: "/login/sign-up",
+          element: <SignUp />,
+        },
+      ],
     },
     {
       path: "/",
